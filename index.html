@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahson's portfolio.</title>
+    <link rel="stylesheet" href="./output.css">
+    <link rel="stylesheet" href="./stars.css">
+    <script src="./navbar.js"></script>
+    <script src="./age.js"></script>
+    <script src="https://kit.fontawesome.com/41f082f35d.js" crossorigin="anonymous"></script>
+</head>
+
+
+<body class="font-mono text-white bg-black  ">
+    <div class="absolute top-[-100vh]">
+        <div id='stars'></div>
+        <div id='stars2'></div>
+        <div id='stars3'></div>
+    </div>
+
+
+    <nav class="w-full mt-16 flex items-center justify-between md:justify-center px-6 md:px-12">
+    
+        <!-- Menu Button (cutesy wala) -->
+        <button id="menu-btn" class="md:hidden focus:outline-none">
+            <svg class="w-6 h-6 relative z-[10000] text-blue-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+    
+        <!-- Unified Menu (minimalistic wala) -->
+        <ul id="menu" class="md:!opacity-100 ease-in-out duration-300 z-[1000] animate-fade-to-grey md:!bg-transparent top-0 justify-center transition-all absolute left-0 w-full flex flex-col h-full  text-blue-400 font-medium lowercase md:flex md:flex-row md:static md:space-x-8 md:py-0 items-center text-lg md:font-bold md:w-auto">
+            <li><a href="./index.html" class="hover:text-blue-300">home</a></li>
+            <li><a href="./projects.html" class="hover:text-blue-300 ">projects</a></li>
+            <li><a href="https://techsleekblogs.vercel.app" class="hover:text-blue-300">blog</a></li>
+            <li><a href="./comingsoon.html" class="hover:text-blue-300">journal</a></li>
+            <li><a href="./comingsoon.html" class="hover:text-blue-300">notes</a></li>
+
+        </ul>
+    </nav>
+
+<section class=" mt-12 mb-12">
+
+    <div class="holder">
+
+        <div class="top flex justify-between !flex-col md:!flex-row items-center">
+            <h1 class="!mb-4 md:!mb-0 hover:text-glow text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-500 drop-shadow-lg">
+                Hey, I'm Ahson! 
+            </h1>
+            <div class="pr-4">
+                <div class="socials text-2xl flex gap-4">
+                    <a href="https://github.com/ahson01#" class="flex justify-center items-center">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="mailto:ahson01@proton.me" class="flex justify-center items-center">
+                        <i class="fa-regular fa-envelope"></i>
+                    </a>
+                    <a href="https://discord.gg/stcApdCN3T#" class="flex justify-center items-center ">
+                        <i class="fa-brands fa-discord"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+
+
+        <br>
+
+        <p class="text-lg text-gray-300 leading-relaxed">
+            I'm a <strong class="text-[#00d9ff] hover:text-glow">full-stack developer</strong> 💻, a 
+            <strong class="text-[#ff6b6b] hover:text-glow">white-hat hacker</strong> 🔐, and an all-around 
+            <strong class="text-[#ffe66d] hover:text-glow">tech enthusiast</strong>. I love diving into everything because, hey, 
+            <em class="italic text-gray-400">something is always better than nothing</em>, right?
+            <u id="age"></u>
+        </p>
+
+    </div>
+
+</section>
+
+<section class=" text-center flex-col mt-12 mb-12">
+
+
+    <div class="holder">
+        <h1 class="text-2xl font-black text-sky-500 hover:text-glow">My Tech Stack</h1> <br>
+        <div class="inline-flex flex-wrap justify-center items-center w-full">
+          <img class="mcard" src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="JavaScript Badge">
+          <img class="mcard" src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python Badge">
+          <img class="mcard" src="https://img.shields.io/badge/r-%23276DC3.svg?style=for-the-badge&logo=r&logoColor=white" alt="R Badge">
+          <img class="mcard" src="https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="">
+          <img class="mcard" src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white" alt="">
+
+          <img class="mcard" src="https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white" alt="Django Badge">
+          <img class="mcard" src="https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white" alt="Flask Badge">
+          <img class="mcard" src="https://img.shields.io/badge/threejs-black?style=for-the-badge&logo=three.js&logoColor=white" alt="Three.js Badge">
+          <img class="mcard" src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" alt="React Badge">
+          <img class="mcard" src="https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js Badge">         
+
+          <img class="mcard" src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white" alt="Django Badge">
+          <img class="mcard" src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" alt="Flask Badge">
+          <img class="mcard" src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Three.js Badge">
+          <img class="mcard" src="https://img.shields.io/badge/jquery-%230769AD.svg?style=for-the-badge&logo=jquery&logoColor=white" alt="Node.js Badge">         
+          <img class="mcard" src="https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white" alt="Node.js Badge">         
+        </div>
+
+        <h1 class="text-gray-500 italic ">P.S. : I've been coding & programming since 2019</h1>
+
+    
+    </div>
+
+</section>
+
+<section class="text-center">
+
+    <div class="holder">
+        <h1 class="text-2xl font-black text-yellow-500 hover:text-glow">Some fun facts about me!</h1>
+        <br>
+    
+        <div class="relative overflow-hidden h-[50px] text-white ">
+            <ul id="funfacts" class="absolute top-0 left-1/2 translate-x-[-50%] space-y-5 ">
+              <li>I invest in stocks using <strong>Kite</strong>.</li>
+              <li>I invest in stocks using <strong>Kite</strong>.</li>
+              <li>I code using <strong>NeoVim</strong>.</li>
+              <li>I am addicted to a social media platform called <strong>Discord</strong>.</li>
+              <li>I write poems... <em>(site coming soon)</em></li>
+              <li>I do Ethereum trading using <strong>bots</strong>.</li>
+              <li>I do Monero mining through <strong>xmrig</strong>.</li>
+              <li>I read <strong>Quora</strong> articles in my free time.</li>
+              <li>I draw using <strong>Adobe Animate</strong>.</li>
+              <li>I code and make AI stock prediction models using <strong>yfinance</strong>, <strong>scikit-learn</strong>, <strong>TensorFlow</strong>, etc.</li>
+              <li>If you ask nicely, I'll code anything for you for <strong>free</strong>.</li>
+            </ul>
+          </div>
+          </div>
+</section>
+
+</body>
+</html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const list = document.getElementById("funfacts");
+        const parent = list.parentNode;
+        const listHeight = list.scrollHeight;
+
+        let scrollPosition = 0;
+
+        // Clone list and append it without creating extra space
+        const clone = list.cloneNode(true);
+        clone.style.position = "absolute";
+        clone.style.top = `${listHeight}px`;
+        parent.appendChild(clone);
+
+        const startScroll = () => {
+            setInterval(() => {
+                scrollPosition += 1;
+                list.style.transform = `translateY(-${scrollPosition}px) translateX(-50%)`;
+                clone.style.transform = `translateY(-${scrollPosition}px) translateX(-50%)`;
+
+                if (scrollPosition >= listHeight) {
+                    scrollPosition = 0;
+                }
+            }, 20); // Adjust scrolling speed (lower is faster)
+        };
+
+        startScroll();
+    });
+</script>

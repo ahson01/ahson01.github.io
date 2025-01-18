@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 
+      0 0 10px #2174ff4f, 
+      0 0 20px #1cffef61, 
+      0 0 30px #0094ff69, 
+      0 0 40px #1bbbff30, 
+      0 0 70px #1bbbff, 
+      0 0 80px #1bbbff, 
+      0 0 100px #1bbbff, 
+      0 0 150px #1bbbff;
+  }
+
+  @keyframes fadeToGrey {
+    from {
+      background-color: black;
+      left: -100%;
+    }
+    to {
+      background-color: rgb(17, 16, 16);
+      left: 0;
+    }
+  }
+
+  .animate-fade-to-grey {
+    animation: fadeToGrey 150ms ease-in-out forwards;
+  }
+}
+
+nav ul li a {
+  @apply hover:text-2xl hover:text-glow duration-[200ms] block p-[30px] md:p-0;
+}
+
+* {
+  @apply transition-all;
+}
+
+.socials a {
+  @apply flex justify-center items-center w-[48px] h-[48px] rounded-lg 
+         border-[#0e1c3276] border-[0.5px] hover:bg-gray-600/100;
+}
+
+.socials a i {
+  @apply text-center text-white text-2xl;
+}
+
+section { 
+  @apply w-full h-full flex justify-center items-center;
+}
+
+.mcard {
+  @apply rounded-2xl p-2 md:opacity-75 md:brightness-150 hover:brightness-100 
+         hover:opacity-100 transition-all duration-300 hover:!scale-125;
+}
+
+.holder {
+  @apply bg-gray-950 bg-opacity-20 backdrop-blur-[2px] relative 
+         max-md:!border-gray-400/100 border-gray-700 md:hover:border-gray-700/100 
+         border-[0.5px] border-opacity-50 bg-transparent w-3/4 md:w-1/2 
+         h-fit rounded-xl p-8;
+}
+
+.holder-project {
+  @apply bg-gray-950 bg-opacity-20 backdrop-blur-[2px] relative 
+         max-md:!border-gray-400/100 border-gray-700 md:hover:border-gray-700/100 
+         border-[0.5px] border-opacity-50 bg-transparent w-auto
+         h-fit rounded-xl p-8 mb-12;
+}
