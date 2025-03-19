@@ -4,8 +4,6 @@ import React, { useState, ReactNode, HTMLAttributes } from "react";
 import { useRouter } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 // Icons (lucide-react)
 import {
@@ -58,20 +56,12 @@ const markdownComponents = {
     </h3>
   ),
   // ... (repeat for h4, h5, h6, etc. if desired)
-  code: ({ inline, className, children, ...props }: MarkdownProps) => {
-    const match = /language-(\w+)/.exec(className || "");
-    if (!inline && match) {
+  code: ({ inline, children, ...props }: MarkdownProps) => {
+    if (!inline) {
       return (
-        <div className="my-4">
-          <SyntaxHighlighter
-            style={dracula as any}
-            language={match[1]}
-            PreTag="div"
-            {...props}
-          >
-            {String(children).replace(/\n$/, "")}
-          </SyntaxHighlighter>
-        </div>
+        <pre className="my-4 p-2 bg-[#111827] overflow-x-auto" {...props}>
+          <code>{children}</code>
+        </pre>
       );
     }
     return (

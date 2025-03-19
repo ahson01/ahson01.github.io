@@ -74,7 +74,6 @@ section {
 }
 
 .flicker-text {
-
   animation: flicker 3s linear infinite;
 }
 
@@ -94,5 +93,12 @@ section {
   /* Periods when the text-shadow is off */
   20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
     text-shadow: none;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .flicker-text {
+    animation: none;
   }
 }

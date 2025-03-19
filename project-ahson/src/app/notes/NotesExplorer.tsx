@@ -6,8 +6,7 @@ import React, { useState, ReactNode, HTMLAttributes } from "react";
 import { useRouter } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { useShikiHighlighter } from "react-shiki";
 
 import {
   Menu as MenuIcon,
@@ -37,6 +36,31 @@ interface Note {
 type MarkdownProps = HTMLAttributes<HTMLElement> & {
   children?: ReactNode;
   inline?: boolean;
+};
+
+// --------------------------------------------------
+// CodeBlock Component using useShikiHighlighter
+// --------------------------------------------------
+interface CodeBlockProps {
+  language: string;
+  children: string;
+}
+
+const CodeBlock: React.FC<CodeBlockProps> = ({ language, children }) => {
+  const codeString = String(children).replace(/\n$/, "");
+  // Call the hook with code, language, and the "dracula" theme.
+  const highlightedCode = useShikiHighlighter(codeString, language, "dracula");
+
+  // While the highlighter is processing, return a fallback.
+  if (!highlightedCode) {
+    return (
+      <pre className={`shiki language-${language} my-4`}>
+        <code>{codeString}</code>
+      </pre>
+    );
+  }
+
+  return <div className="my-4">{highlightedCode}</div>;
 };
 
 // --------------------------------------------------
@@ -101,9 +125,14 @@ const markdownComponents = {
       {children}
     </blockquote>
   ),
-  hr: (props: MarkdownProps) => <hr className="my-6 border-gray-700" {...props} />,
+  hr: (props: MarkdownProps) => (
+    <hr className="my-6 border-gray-700" {...props} />
+  ),
   table: ({ children, ...props }: MarkdownProps) => (
-    <table className="my-6 w-full border border-gray-700 border-collapse" {...props}>
+    <table
+      className="my-6 w-full border border-gray-700 border-collapse"
+      {...props}
+    >
       {children}
     </table>
   ),
@@ -112,7 +141,9 @@ const markdownComponents = {
       {children}
     </thead>
   ),
-  tbody: ({ children, ...props }: MarkdownProps) => <tbody {...props}>{children}</tbody>,
+  tbody: ({ children, ...props }: MarkdownProps) => (
+    <tbody {...props}>{children}</tbody>
+  ),
   tr: ({ children, ...props }: MarkdownProps) => (
     <tr className="border-b border-gray-700 last:border-b-0" {...props}>
       {children}
@@ -127,28 +158,25 @@ const markdownComponents = {
     </th>
   ),
   td: ({ children, ...props }: MarkdownProps) => (
-    <td className="px-3 py-2 align-top border-r border-gray-700 last:border-r-0" {...props}>
+    <td
+      className="px-3 py-2 align-top border-r border-gray-700 last:border-r-0"
+      {...props}
+    >
       {children}
     </td>
   ),
   code: ({ inline, className, children, ...props }: MarkdownProps) => {
     const match = /language-(\w+)/.exec(className || "");
     if (!inline && match) {
-      return (
-        <div className="my-4">
-          <SyntaxHighlighter
-            style={dracula as any}
-            language={match[1]}
-            PreTag="div"
-            {...props}
-          >
-            {String(children).replace(/\n$/, "")}
-          </SyntaxHighlighter>
-        </div>
-      );
+      const language = match[1];
+      const codeString = String(children).replace(/\n$/, "");
+      return <CodeBlock language={language}>{codeString}</CodeBlock>;
     }
     return (
-      <code className="bg-[#111827] text-[#4A90E2] px-1 py-0.5 rounded" {...props}>
+      <code
+        className="bg-[#111827] text-[#4A90E2] px-1 py-0.5 rounded"
+        {...props}
+      >
         {children}
       </code>
     );
@@ -219,7 +247,6 @@ export default function NotesExplorer({ initialNotes }: { initialNotes: Note[] }
           {/* Folder List */}
           {Object.entries(folderMap).map(([folder, notesInFolder]) => {
             const isOpen = openFolders[folder] ?? false;
-
             return (
               <div key={folder} className="mb-3">
                 {/* Folder Header */}
@@ -254,7 +281,9 @@ export default function NotesExplorer({ initialNotes }: { initialNotes: Note[] }
                         <div className="font-semibold">
                           {note.title || note.id}
                         </div>
-                        <div className="text-xs text-gray-400">{note.date}</div>
+                        <div className="text-xs text-gray-400">
+                          {note.date}
+                        </div>
                         <div className="text-xs text-[#4A90E2]">
                           {note.tags?.map((tag) => `#${tag}`).join(" ")}
                         </div>
@@ -295,7 +324,9 @@ export default function NotesExplorer({ initialNotes }: { initialNotes: Note[] }
                 {selectedNote.title}
               </h1>
               {selectedNote.date && (
-                <p className="text-gray-500 text-sm mb-6">{selectedNote.date}</p>
+                <p className="text-gray-500 text-sm mb-6">
+                  {selectedNote.date}
+                </p>
               )}
 
               {/* Markdown */}

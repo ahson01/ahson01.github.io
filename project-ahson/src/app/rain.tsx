@@ -70,7 +70,7 @@ const CanvasAnimation: React.FC = () => {
 
   return (
     <canvas
-      className="absolute opacity-30 top-0 w-full -z-20"
+      className="sm:hidden absolute opacity-30 top-0 w-full -z-20"
       ref={canvasRef}
       id="canvas"
     />
