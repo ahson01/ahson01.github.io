@@ -96,10 +96,7 @@ section {
   }
 }
 
-a {
-  text-decoration: underline;
-  color: #1bbbff;
-}
+
 
 @media (max-width: 768px) {
   .flicker-text {

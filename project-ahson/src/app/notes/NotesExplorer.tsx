@@ -214,6 +214,8 @@ export default function NotesExplorer({ initialNotes }: { initialNotes: Note[] }
 
   return (
     <div className="font-mono bg-black text-gray-300 h-screen flex flex-col">
+
+
       {/* Mobile Navbar */}
       <div className="bg-[#0D0D0D] p-4 flex justify-between items-center md:hidden">
         <button
