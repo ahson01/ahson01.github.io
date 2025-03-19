@@ -1,31 +1,10 @@
 @import "tailwindcss";
 
-/* Define root theme variables */
-:root {
-  --background-light: #ffffff;
-  --foreground-light: #000000;
-  --background-dark: #000000;
-  --foreground-dark: #ededed;
-}
-
-/* Default light mode */
-:root {
-  --background: var(--background-light);
-  --foreground: var(--foreground-light);
-}
-
-/* Dark mode preferences */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: var(--background-dark);
-    --foreground: var(--foreground-dark);
-  }
-}
 
 /* Apply theme variables */
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: #000000;
+  color: #ededed;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
