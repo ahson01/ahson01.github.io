@@ -96,8 +96,6 @@ section {
   }
 }
 
-
-
 @media (max-width: 768px) {
   .flicker-text {
     animation: none;
