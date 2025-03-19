@@ -96,6 +96,9 @@ section {
   }
 }
 
+a {
+  text-decoration: underline;
+}
 
 @media (max-width: 768px) {
   .flicker-text {
