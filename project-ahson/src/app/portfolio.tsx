@@ -91,9 +91,26 @@ export default function Portfolio() {
       <section className="holder text-center relative flex-col">
         <SocialIcons />
         <div className="w-full">
-          <h1 className="md:!mb-4 md:!mb-0 w-fit md:!text-left glowy text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-500 drop-shadow-lg">
-            Hey, I&apos;m Ahson! 
+          <h1 className="md:!mb-4 flicker-text w-fit md:!text-left glowy text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-500 drop-shadow-lg">
+            Hey, I'm Ahson! 
           </h1>
+          <p className="!m-0 !p-0 !-mb-4 text-left text-gray-400 flex items-center">    
+      <svg
+        style={{ margin: 0 }}
+        className="w-5 mr-2"
+        viewBox="0 0 15 15"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M6 3.5C6 2.67157 6.67157 2 7.5 2S9 2.67157 9 3.5 8.32843 5 7.5 5C6.67157 5 6 4.32843 6 3.5zM8 5.94999C9.14112 5.71836 10 4.70948 10 3.5 10 2.11929 8.88071 1 7.5 1 6.11929 1 5 2.11929 5 3.5c0 1.20948.85888 2.21836 2 2.44999V13.5c0 .2761.22386.5.5.5s.5-.2239.5-.5V5.94999z"
+          fill="currentColor"
+          fillRule="evenodd"
+          clipRule="evenodd"
+        />
+      </svg>
+      North India
+    </p>
         </div>
 
         <p className="text-lg !mb-[6px] !text-left text-gray-300 leading-relaxed mt-6">
@@ -119,6 +136,8 @@ export default function Portfolio() {
 
         </div>
       </section>
+
+
 
     </div>
   );
