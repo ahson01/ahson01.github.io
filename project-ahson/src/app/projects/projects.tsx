@@ -22,7 +22,7 @@ interface Project {
       title: "Maths Speed Multiplier",
       image: "./projects/msm.png",
       link: "https://ahson01.github.io/msm",
-      description: "A cool site to link my socials, for my *GAMING* YouTube channel.",
+      description: "A simple tool to help you level up your maths to the next level.",
     },
   ];
   
