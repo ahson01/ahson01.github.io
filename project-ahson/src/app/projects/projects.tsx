@@ -24,6 +24,12 @@ interface Project {
       link: "https://ahson01.github.io/msm",
       description: "A simple tool to help you level up your maths to the next level.",
     },
+    {
+      title: "MouseRedirect",
+      image: "./projects/mouse.png",
+      link: "https://github.com/ahson01/MouseRedirect",
+      description: "Repositions your mouse to its last position 5 seconds ago.",
+    },
   ];
   
   const ProjectCard = ({ project }: { project: Project }) => (
