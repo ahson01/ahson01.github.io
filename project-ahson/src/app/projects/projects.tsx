@@ -31,7 +31,7 @@ interface Project {
       description: "Repositions your mouse to its last position 5 seconds ago.",
     },
     {
-      title: "GitHubStorage",
+      title: "GitHubStorage Python Package",
       image: "./projects/github-storage.png",
       link: "https://pypi.org/project/github-storage/0.1.0/",
       description: "Store and manage files on GitHub with ease. Supports big files, versioning, optional compression, encryption, and a simple CLI.",
