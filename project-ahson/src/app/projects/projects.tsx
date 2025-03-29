@@ -1,3 +1,5 @@
+"use client"
+
 import {
   FaPython, FaReact, FaHtml5, FaCss3Alt, FaJsSquare,
   FaGithub, FaNodeJs, FaJava, FaSwift, FaPhp,

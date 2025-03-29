@@ -1,38 +1,23 @@
-"use client"
+"use client";
 
-import Navbar from "../common/navbar"; 
-import ProjectShowcase from "./projects"
-
+import Navbar from "../common/navbar";
+import ProjectShowcase from "./projects";
 import { useEffect } from "react";
 
-export function HideScrollbar() {
+export default function Home() {
   useEffect(() => {
-    // Set overflow hidden on mount
     document.body.style.overflow = "hidden";
-
-    // Clean up: reset on unmount
     return () => {
       document.body.style.overflow = "";
     };
   }, []);
 
   return (
-    <div className="your-showcase-class">
-      {/* your content */}
-    </div>
-  );
-}
-
-export default function Home() {
-  return (
     <div className="font-mono overflow-hidden">
       <Navbar />
-        <div className="m-12">
+      <div className="m-12">
         <ProjectShowcase />
-        <HideScrollbar />
-        </div>
+      </div>
     </div>
-
   );
 }
-
