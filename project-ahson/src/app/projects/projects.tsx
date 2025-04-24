@@ -89,7 +89,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
       href={project.link}
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative flex flex-col justify-between overflow-hidden rounded-xl bg-background border border-white/10 shadow-[0_-20px_80px_-20px_rgba(255,255,255,0.1)] min-h-[300px] sm:min-h-[400px] md:min-h-[500px] transition duration-500 ease-in-out"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-xl bg-background border border-white/10 min-h-[300px] sm:min-h-[400px] md:min-h-[500px] transition duration-500 ease-in-out"
     >
       <img
         src={project.image}
