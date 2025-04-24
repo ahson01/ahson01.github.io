@@ -42,23 +42,6 @@ const languageIconMap: Record<string, IconType> = {
 
 const projects: Project[] = [
   {
-    title: "Tech Sleek Blog",
-    image: "./projects/blog.png",
-    link: "https://techsleekblogs.vercel.app/",
-    description:
-      "Hey! This retro-themed blog by Ahson shares tech tips, built in a day with Django, Vercel, and Google SSO.",
-    details: "markdown.",
-    tags: ["Django", "HTML", "CSS", "Vercel"],
-  },
-  {
-    title: "PPT TO PNG",
-    image: "./projects/ppt-to-png.png",
-    link: "https://png-to-ppt.glitch.me/",
-    description:
-      "Convert PNG images into downloadable PowerPoint slides. Built using the Bottles Python framework.",
-    tags: ["Python", "Express"],
-  },
-  {
     title: "Maths Speed Multiplier",
     image: "./projects/msm.png",
     link: "https://ahson01.github.io/msm",
@@ -80,6 +63,24 @@ const projects: Project[] = [
     details: "Supports large files and provides a CLI for automation.",
     tags: ["Python", "GitHub Actions"],
   },
+  {
+    title: "Tech Sleek Blog",
+    image: "./projects/blog.png",
+    link: "https://techsleekblogs.vercel.app/",
+    description:
+      "Hey! This retro-themed blog by Ahson shares tech tips, built in a day with Django, Vercel, and Google SSO.",
+    details: "markdown.",
+    tags: ["Django", "HTML", "CSS", "Vercel"],
+  },
+  {
+    title: "PPT TO PNG",
+    image: "./projects/ppt-to-png.png",
+    link: "https://png-to-ppt.glitch.me/",
+    description:
+      "Convert PNG images into downloadable PowerPoint slides. Built using the Bottles Python framework.",
+    tags: ["Python", "Express"],
+  },
+
 ];
 
 const ProjectCard = ({ project }: { project: Project }) => {
