@@ -227,8 +227,14 @@ export default function NotesExplorer({ initialNotes }: { initialNotes: Note[] }
         </button>
         <button
           className="text-[#4A90E2] px-3 py-2 rounded-md bg-[#111827] hover:bg-[#1A1A1A] transition-all flex items-center"
-          onClick={() => router.push("/")}
-        >
+          onClick={() => {
+              if (window.location.pathname === "/") {
+                window.location.reload(); // Force reload if already on "/"
+              } else {
+                window.location.href = "/"; // Navigate to "/" and reloads
+              }
+            }}
+          >
           <HomeIcon className="w-4 h-4 mr-2" />
           Home
         </button>
