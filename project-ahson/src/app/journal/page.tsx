@@ -33,8 +33,10 @@ export default async function JournalPage() {
  * for all `.md` files under `journal/` in your GitHub repo.
  */
 async function fetchAllJournalEntries(): Promise<JournalEntry[]> {
-  const treeUrl = "https://api.github.com/repos/ahson01/public-stuff/git/trees/main?recursive=1";
-  const rawBase = "https://raw.githubusercontent.com/ahson01/public-stuff/main/";
+  const treeUrl =
+    "https://api.github.com/repos/ahson01/public-stuff/git/trees/main?recursive=1";
+  const rawBase =
+    "https://raw.githubusercontent.com/ahson01/public-stuff/main/";
 
   const headers = {
     Authorization: `token ${GITHUB_API_TOKEN}`,
@@ -50,8 +52,11 @@ async function fetchAllJournalEntries(): Promise<JournalEntry[]> {
   const data = await res.json();
   if (!data.tree || !Array.isArray(data.tree)) return [];
 
-  const mdFiles = data.tree.filter((item: any) =>
-    item.type === "blob" && item.path.startsWith("journal/") && item.path.endsWith(".md")
+  const mdFiles = data.tree.filter(
+    (item: any) =>
+      item.type === "blob" &&
+      item.path.startsWith("journal/") &&
+      item.path.endsWith(".md")
   );
 
   const entries: JournalEntry[] = [];

@@ -9,8 +9,8 @@ export const revalidate = 0;
  */
 interface Note {
   id: string;
-  file: string;      // e.g., "notes/life/my-note.md"
-  folder: string;    // e.g., "life"
+  file: string; // e.g., "notes/life/my-note.md"
+  folder: string; // e.g., "life"
   title?: string;
   date?: string;
   tags?: string[];
@@ -40,8 +40,10 @@ export default async function NotesExplorerPage() {
  * - Returns an array of `Note`.
  */
 async function fetchAllMarkdownRecursively(): Promise<Note[]> {
-  const treeUrl = "https://api.github.com/repos/ahson01/public-stuff/git/trees/main?recursive=1";
-  const rawBase = "https://raw.githubusercontent.com/ahson01/public-stuff/main/";
+  const treeUrl =
+    "https://api.github.com/repos/ahson01/public-stuff/git/trees/main?recursive=1";
+  const rawBase =
+    "https://raw.githubusercontent.com/ahson01/public-stuff/main/";
 
   const headers = {
     Authorization: `token ${GITHUB_API_TOKEN}`,
@@ -85,10 +87,11 @@ async function fetchAllMarkdownRecursively(): Promise<Note[]> {
     const baseName = fileName.replace(".md", "");
 
     // Extract folder name
-    const folder = file.path
-      .replace(`/${fileName}`, "") // remove "/my-note.md"
-      .replace("notes/", "")       // remove "notes/"
-      || "GitHub";
+    const folder =
+      file.path
+        .replace(`/${fileName}`, "") // remove "/my-note.md"
+        .replace("notes/", "") || // remove "notes/"
+      "GitHub";
 
     notes.push({
       id: baseName,

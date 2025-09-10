@@ -46,9 +46,10 @@ const RoamingFrames = () => {
   }, []);
 
   // Helper: format frame number to two digits.
-  const formatFrameNumber = (num: number) =>
-    num < 10 ? `0${num}` : num;
-  const frameSrc = `/random-pics/minecraft-allay/frame_apngframe${formatFrameNumber(frameIndex)}.png`;
+  const formatFrameNumber = (num: number) => (num < 10 ? `0${num}` : num);
+  const frameSrc = `/random-pics/minecraft-allay/frame_apngframe${formatFrameNumber(
+    frameIndex
+  )}.png`;
 
   return (
     <motion.div
@@ -62,9 +63,7 @@ const RoamingFrames = () => {
     >
       {/* The animated image with levitation effect */}
       <motion.div
-        animate={
-          phase === "moving" ? { y: 0 } : { y: [0, -5, 0] }
-        }
+        animate={phase === "moving" ? { y: 0 } : { y: [0, -5, 0] }}
         transition={
           phase === "moving"
             ? {}

@@ -8,7 +8,7 @@ const CanvasAnimation: React.FC = () => {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    
+
     const fullPageHeight = Math.max(
       window.innerHeight,
       document.documentElement.scrollHeight,

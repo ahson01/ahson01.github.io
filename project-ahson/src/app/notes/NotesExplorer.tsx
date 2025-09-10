@@ -186,7 +186,11 @@ const markdownComponents = {
 // --------------------------------------------------
 // Main Explorer Component
 // --------------------------------------------------
-export default function NotesExplorer({ initialNotes }: { initialNotes: Note[] }) {
+export default function NotesExplorer({
+  initialNotes,
+}: {
+  initialNotes: Note[];
+}) {
   const router = useRouter();
 
   const [notes] = useState<Note[]>(initialNotes);
@@ -214,8 +218,6 @@ export default function NotesExplorer({ initialNotes }: { initialNotes: Note[] }
 
   return (
     <div className="font-mono bg-black text-gray-300 h-screen flex flex-col">
-
-
       {/* Mobile Navbar */}
       <div className="bg-[#0D0D0D] p-4 flex justify-between items-center md:hidden">
         <button
@@ -228,13 +230,13 @@ export default function NotesExplorer({ initialNotes }: { initialNotes: Note[] }
         <button
           className="text-[#4A90E2] px-3 py-2 rounded-md bg-[#111827] hover:bg-[#1A1A1A] transition-all flex items-center"
           onClick={() => {
-              if (window.location.pathname === "/") {
-                window.location.reload(); // Force reload if already on "/"
-              } else {
-                window.location.href = "/"; // Navigate to "/" and reloads
-              }
-            }}
-          >
+            if (window.location.pathname === "/") {
+              window.location.reload(); // Force reload if already on "/"
+            } else {
+              window.location.href = "/"; // Navigate to "/" and reloads
+            }
+          }}
+        >
           <HomeIcon className="w-4 h-4 mr-2" />
           Home
         </button>
@@ -289,9 +291,7 @@ export default function NotesExplorer({ initialNotes }: { initialNotes: Note[] }
                         <div className="font-semibold">
                           {note.title || note.id}
                         </div>
-                        <div className="text-xs text-gray-400">
-                          {note.date}
-                        </div>
+                        <div className="text-xs text-gray-400">{note.date}</div>
                         <div className="text-xs text-[#4A90E2]">
                           {note.tags?.map((tag) => `#${tag}`).join(" ")}
                         </div>
