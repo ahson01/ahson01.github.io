@@ -7,7 +7,7 @@ import Link from "next/link";
 const socialLinks = [
   { href: "https://github.com/ahson01#", icon: <FaGithub /> },
   { href: "mailto:ahson01@proton.me", icon: <FaEnvelope /> },
-  { href: "https://dsc.gg/imeccentric", icon: <FaDiscord /> },
+  { href: "https://discord.com/users/1358124434732613862", icon: <FaDiscord /> },
 ];
 
 const techStack = [
@@ -43,7 +43,7 @@ const funFacts = [
 const SocialIcons = () => (
   <div className="socials flex gap-4 text-2xl relative md:absolute top-[-10%] right-0 p-0 md:p-12">
     {socialLinks.map((link, index) => (
-      <a key={index} href={link.href} className="flex justify-center items-center w-12 h-12 rounded-lg border-[#0e1c3276] border-[0.5px] hover:bg-gray-600/100">
+      <a key={index} href={link.href} className="flex justify-center items-center mb-6 w-12 h-12 rounded-lg border-[#0e1c3276] border-[0.5px] hover:bg-gray-600/100">
         {link.icon}
       </a>
     ))}
