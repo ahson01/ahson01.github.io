@@ -53,7 +53,7 @@ const RoamingFrames = () => {
   return (
     <motion.div
       animate={controls}
-      className="left-0 top-0"
+      className="left-0 top-0 allay"
       style={{
         position: "absolute",
         width: "124px",

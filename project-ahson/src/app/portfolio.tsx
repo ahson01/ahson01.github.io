@@ -24,6 +24,13 @@ const techStack = [
     { name: "html5", color: "E34F26", logoColor: "white" },
     { name: "tailwindcss", color: "38B2AC", logoColor: "white" },
     { name: "jquery", color: "0769AD", logoColor: "white" },
+    { name: "postgresql", color: "4169E1", logoColor: "white" },
+    { name: "rust", color: "000000", logoColor: "white" },
+    { name: "git", color: "F05032", logoColor: "white" },
+    { name: "next.js", color: "000000", logoColor: "white" },
+    { name: "typescript", color: "3178C6", logoColor: "white" },
+    { name: "go", color: "00ADD8", logoColor: "white" },
+    
   ];
   
 
@@ -50,20 +57,65 @@ const SocialIcons = () => (
   </div>
 );
 
-const TechStack = () => (
-  <div className="inline-flex flex-wrap justify-center mt-6 items-center w-full gap-2">
-    {techStack.map((tech, index) => (
-      <Image 
-        key={index} 
-        className="mcard rounded-2xl !brightness-100 !opacity-100 transition-all duration-300 hover:!scale-125 h-[45px] w-auto" 
-        src={`https://img.shields.io/badge/${tech.name}-${tech.color}?style=for-the-badge&logo=${tech.name}&logoColor=${tech.logoColor}`} 
-        alt={`${tech.name} Badge`}
-        width={100}
-        height={28}
-      />
-    ))}
-  </div>
-);
+const TechStack = () => {
+  // Split into two rows (odd/even index split)
+  const row1 = techStack.filter((_, i) => i % 2 === 0);
+  const row2 = techStack.filter((_, i) => i % 2 !== 0);
+
+  return (
+    <div className="w-full mt-6 flex flex-col gap-6 overflow-hidden">
+      {/* Row 1 */}
+      <div className="flex animate-marquee whitespace-nowrap gap-4">
+        {row1.map((tech, index) => (
+          <Image
+            key={index}
+            className="mcard !brightness-100 !opacity-100 rounded-2xl transition-transform duration-300 hover:scale-125 h-[45px] w-auto"
+            src={`https://img.shields.io/badge/${tech.name}-${tech.color}?style=for-the-badge&logo=${tech.name}&logoColor=${tech.logoColor}`}
+            alt={`${tech.name} Badge`}
+            width={100}
+            height={28}
+          />
+        ))}
+        {/* duplicate for seamless scroll */}
+        {row1.map((tech, index) => (
+          <Image
+            key={`dup1-${index}`}
+            className="mcard !brightness-100 !opacity-100 rounded-2xl h-[45px] w-auto"
+            src={`https://img.shields.io/badge/${tech.name}-${tech.color}?style=for-the-badge&logo=${tech.name}&logoColor=${tech.logoColor}`}
+            alt={`${tech.name} Badge`}
+            width={100}
+            height={28}
+          />
+        ))}
+      </div>
+
+      {/* Row 2 */}
+      <div className="flex animate-marquee2 whitespace-nowrap gap-4">
+        {row2.map((tech, index) => (
+          <Image
+            key={index}
+            className="mcard rounded-2xl !brightness-100 !opacity-100 transition-transform duration-300 hover:scale-125 h-[45px] w-auto"
+            src={`https://img.shields.io/badge/${tech.name}-${tech.color}?style=for-the-badge&logo=${tech.name}&logoColor=${tech.logoColor}`}
+            alt={`${tech.name} Badge`}
+            width={100}
+            height={28}
+          />
+        ))}
+        {row2.map((tech, index) => (
+          <Image
+            key={`dup2-${index}`}
+            className="mcard !brightness-100 !opacity-100 rounded-2xl h-[45px] w-auto"
+            src={`https://img.shields.io/badge/${tech.name}-${tech.color}?style=for-the-badge&logo=${tech.name}&logoColor=${tech.logoColor}`}
+            alt={`${tech.name} Badge`}
+            width={100}
+            height={28}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
 
 const FunFacts = () => {
   const [scrollPosition, setScrollPosition] = useState(0);

@@ -18,6 +18,7 @@ interface Note {
 }
 
 const GITHUB_API_TOKEN = process.env.GITHUB_API_TOKEN;
+
 /**
  * Main Page component: fetch notes from GitHub, parse frontmatter, render them.
  */
