@@ -35,7 +35,6 @@ export default function Navbar() {
         <li><a href="/" className="hover:text-blue-300">home</a></li>
         <li><a href="/projects" className="hover:text-blue-300">projects</a></li>
         <li><a href="/tools" className="hover:text-blue-300">tools</a></li>
-        <li><a href="/journal" className="hover:text-blue-300">journal</a></li>
         <li><a href="/notes" className="hover:text-blue-300">notes</a></li>
       </ul>
     </nav>
