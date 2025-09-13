@@ -159,6 +159,11 @@ const markdownComponents = {
       {children}
     </p>
   ),
+  a: ({ children, ...props }: MarkdownProps) => (
+    <a className="text-blue-400 underline" {...props}>
+      {children}
+    </a>
+  ),
   h1: ({ children, ...props }: MarkdownProps) => (
     <h1 className="text-3xl font-bold my-8" {...props}>
       {children}
