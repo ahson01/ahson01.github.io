@@ -27,9 +27,9 @@ export default async function NotesExplorerPage() {
 
 async function fetchAllMarkdownRecursively(): Promise<Note[]> {
   const treeUrl =
-    "https://api.github.com/repos/ahson01/public-stuff/git/trees/main?recursive=1";
+    "https://api.github.com/repos/ahson01/notes/git/trees/main?recursive=1";
   const rawBase =
-    "https://raw.githubusercontent.com/ahson01/public-stuff/main/";
+    "https://raw.githubusercontent.com/ahson01/notes/main/";
 
   const headers: Record<string, string> = {
     Accept: "application/vnd.github.v3+json",

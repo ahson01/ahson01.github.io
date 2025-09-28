@@ -34,9 +34,9 @@ export default async function JournalPage() {
  */
 async function fetchAllJournalEntries(): Promise<JournalEntry[]> {
   const treeUrl =
-    "https://api.github.com/repos/ahson01/public-stuff/git/trees/main?recursive=1";
+    "https://api.github.com/repos/ahson01/notes/git/trees/main?recursive=1";
   const rawBase =
-    "https://raw.githubusercontent.com/ahson01/public-stuff/main/";
+    "https://raw.githubusercontent.com/ahson01/notes/main/";
 
   const headers = {
     Authorization: `token ${GITHUB_API_TOKEN}`,
