@@ -621,6 +621,13 @@ export default function NotesExplorer({ initialNotes }: { initialNotes: Note[] }
           ) : (
             <div className="h-full grid place-items-center">
               <div className="text-center max-w-lg">
+              <button
+        className="mb-6 px-4 py-2 rounded-md bg-[#111827] text-[#4A90E2] hover:bg-[#1A1A1A] transition-all flex items-center justify-center mx-auto"
+        onClick={goHome}
+      >
+        <ArrowLeft className="w-4 h-4 mr-2" />
+        Back
+      </button>
                 <p className="text-gray-400 mb-3">Select a note to view its content.</p>
                 <p className="text-gray-500 text-sm">Tip: use the search box in the left sidebar to filter by title, tags, or path. You can also deep‑link to a note with <code>?note=&lt;id&gt;</code>.</p>
               </div>
