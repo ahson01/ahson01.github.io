@@ -42,13 +42,6 @@ const languageIconMap: Record<string, IconType> = {
 
 const projects: Project[] = [
   {
-    title: "Maths Speed Multiplier",
-    image: "./projects/msm.png",
-    link: "https://ahson01.github.io/msm",
-    description: "Sharpen your mental math with speed-based multiplication challenges.",
-    tags: ["JavaScript", "HTML"],
-  },
-  {
     title: "MouseRedirect",
     image: "./projects/mouse.png",
     link: "https://github.com/ahson01/MouseRedirect",
@@ -80,7 +73,21 @@ const projects: Project[] = [
       "Convert PNG images into downloadable PowerPoint slides. Built using the Bottles Python framework.",
     tags: ["Python", "Express"],
   },
-
+  {
+    title: "OmeCord",
+    image: "./projects/omecord.png",
+    link: "https://github.com/ahson01/omecord",
+    description:
+      "An omegle-style discord bot, which allows you to talk to strangers within your discord server.",
+    tags: ["Python", "Docker"],
+  },
+  {
+    title: "Maths Speed Multiplier",
+    image: "./projects/msm.png",
+    link: "https://ahson01.github.io/msm",
+    description: "Sharpen your mental math with speed-based multiplication challenges.",
+    tags: ["JavaScript", "HTML"],
+  },
 ];
 
 const ProjectCard = ({ project }: { project: Project }) => {
